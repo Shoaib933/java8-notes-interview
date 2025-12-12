@@ -23,6 +23,12 @@ public class EmpSort {
                 })
                 .collect(Collectors.toList());
         System.out.println(sorted); // Output: [Bob: 3000, Charlie: 4000, Alice: 5000]
+
+        /* List<Employee> emp = employees.stream()
+            .sorted((e1,e2) -> {
+                return Integer.compare(e2.salary, e1.salary);
+            }).toList();
+    IO.println(emp);
         /*
         | Goal                          | Example                                                         |
 | ----------------------------- | --------------------------------------------------------------- |
