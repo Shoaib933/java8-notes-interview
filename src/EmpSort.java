@@ -23,6 +23,13 @@ public class EmpSort {
                 })
                 .collect(Collectors.toList());
         System.out.println(sorted); // Output: [Bob: 3000, Charlie: 4000, Alice: 5000]
+        IO.println("Second Higest Salary Employee");
+        employees.stream()
+                .sorted(Comparator.comparingInt(e -> -e.salary))
+//                .sorted(Comparator.comparingInt(Employee::getSalary)
+                .skip(1)
+                .findFirst()
+                .ifPresent(IO::println);
 
         /* List<Employee> emp = employees.stream()
             .sorted((e1,e2) -> {

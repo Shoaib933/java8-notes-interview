@@ -209,3 +209,45 @@ public class Main {
 
     }
 }
+/*
+5. Group strings by their length using  groupingBy()  .
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+Map<Integer, List<String>> grouped = names.stream()
+.collect(Collectors.groupingBy(String::length));
+System.out.println(grouped); // Output: {3=[Bob], 5=[Alice], 7=[Charlie]}
+ */
+/*
+7. Count word occurrences in a list using  groupingBy()  .
+List<String> words = Arrays.asList("apple", "banana", "apple");
+Map<String, Long> wordCount = words.stream()
+.collect(Collectors.groupingBy(w -> w, Collectors.counting()));
+System.out.println(wordCount); // Output: {apple=2, banana=1}
+ */
+/*
+17. Count the frequency of characters in a string using Streams.
+String input = "java";
+Map<Character, Long> frequency = input.chars()
+.mapToObj(c -> (char) c)
+.collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+System.out.println(frequency); // Output: {a=2, j=1, v=1}
+ */
+/*
+22. Group employees by department using  Collectors.groupingBy()
+ */
+/*
+23. Count occurrences of each word in a sentence.
+String sentence = "Java is fun and Java is powerful";
+Map<String, Long> wordCount = Arrays.stream(sentence.split(" "))
+.collect(Collectors.groupingBy(word -> word,
+Collectors.counting()));
+System.out.println(wordCount); // Output: {Java=2, is=2, fun=1, and=1,
+powerful=1}
+ */
+/*
+29. Find duplicate elements in a list using Streams.
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 2, 3);
+Set<Integer> duplicates = numbers.stream()
+.filter(n -> Collections.frequency(numbers, n) > 1)
+.collect(Collectors.toSet());
+System.out.println(duplicates); // Output: [2, 3] 
+ */
