@@ -1,7 +1,9 @@
 package Instagram;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FindCommonElements {
     static void main(String[] args) {
@@ -12,5 +14,40 @@ public class FindCommonElements {
                 .filter(list2::contains)
                 .toList();
         IO.println("Commomn elemets "+commomList);
+        // Find uncommon elemets
+        List<Integer> listUncommon = Stream.concat(list1.stream(), list2.stream())
+                .filter(e -> !(list1.contains(e) && list2.contains(e)))
+                .toList();
+        IO.println("Uncommon app1 ..... "+listUncommon);
+
+
+        //2nd Way
+
+        Set<Integer> common = new HashSet<>(list1);
+        common.retainAll(list2);
+        //remove all elements those are not part of argumented collection means it gives common elemets
+        IO.println("Retain : "+common);
+
+        List<Integer> uncommon = Stream.concat(list1.stream(), list2.stream())
+                .filter(e -> !common.contains(e))
+                .collect(Collectors.toList());
+        IO.println("Uncommon app1 ..... "+uncommon);
+
+
+        //3rd way groupingBy
+        List<Integer> uncommon1 = Stream.concat(list1.stream(), list2.stream())
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .filter(e -> e.getValue() == 1)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+
+        System.out.println(uncommon1);
+
+
+
+
+
+
     }
 }

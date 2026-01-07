@@ -13,7 +13,8 @@ public class FindMissingNumberListFromArray {
         int max = Arrays.stream(arr).max().getAsInt();
 
         Set<Integer> collect = Arrays.stream(arr)
-                .boxed()
+//                .boxed()
+                .mapToObj(obj-> obj)
                 .collect(Collectors.toSet());
 
         List<Integer> list = IntStream.rangeClosed(min, max)
