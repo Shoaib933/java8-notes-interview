@@ -19,14 +19,24 @@ public class GroupStringByLength {
                 .toList();
 
         IO.println(rev);
+        //-------------------------------------------------------------------------------------
+        IO.println("✅ If You Want Only the VALUES (List<String>)");
 
-//        ✅ If You Want Only the VALUES (List<String>)
                 List<List<String>> revValList =
                 grp.entrySet().stream()
                         .sorted(Map.Entry.<Integer, List<String>>comparingByKey().reversed())
                         .map(Map.Entry::getValue)
                         .collect(Collectors.toList());
         IO.println(revValList);
+        //-----------------------------------------------------------------------------------------
+        IO.println("If you Want Second highest length of String");
+        List<String> secndList = grp.entrySet().stream()
+                .sorted(Map.Entry.<Integer, List<String>>comparingByKey().reversed())
+                .map(Map.Entry::getValue)
+                .skip(1)
+                .findFirst().orElse(null);
+        IO.println(secndList);
+        //--------------------------------------------------------------------------------------------
             // Very Confusion for me
 //        ✅ If You Want a Sorted Map (Descending Key Order) ⭐ (Best)
                 Map<Integer, List<String>> sortedMap =
