@@ -1,7 +1,7 @@
 package interview;
 /*
 Condition  - Array is sorted
-  Result         - each unique element appears only once
+  Result         - emove some duplicates in-place such that each unique element appears only once
  */
 public class RmvDupSortArray {
     static void main() {
