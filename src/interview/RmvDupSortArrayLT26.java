@@ -3,7 +3,7 @@ package interview;
 Condition  - Array is sorted
   Result         - emove some duplicates in-place such that each unique element appears only once
  */
-public class RmvDupSortArray {
+public class RmvDupSortArrayLT26 {
     static void main() {
         int[] arr = {1,1,2,2,3,3,4,4};
 
