@@ -18,7 +18,7 @@ public class RemDupSortArrayLT80 {
         if (arr.length<=2)
             return arr.length;
         int slow = 2;
-        for (int fast = 0; fast < arr.length; fast++) {
+        for (int fast = 2; fast < arr.length; fast++) {
 
             if (arr[slow-2] != arr[fast]) {
                 arr[slow] = arr[fast];
