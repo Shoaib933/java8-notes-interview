@@ -1,11 +1,14 @@
 package interview;
+/*
+particular eleewnt remove karne ke bad length kiya hoga
+ */
 
 public class removeSpecElemArray {
 
     static void main() {
 
-        int[] arr = {3, 2, 2, 3};
-//        int[] arr = {0, 1, 2, 2, 3, 0, 4, 2};
+//        int[] arr = {3, 2, 2, 3};
+        int[] arr = {0, 1, 2, 2, 3, 0, 4, 2};
         int rmvElem = 2;
         int p=0;
 
