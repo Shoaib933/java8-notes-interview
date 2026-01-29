@@ -19,7 +19,7 @@ public class removeSpecElemArray {
         for (int i = 0; i < p; i++) {
             IO.println(arr[p]);
         }
-
+        IO.println("length : "+p);
 
     }
 }
