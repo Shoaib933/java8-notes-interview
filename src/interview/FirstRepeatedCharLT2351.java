@@ -2,7 +2,7 @@ package interview;
 // First Letter to Appear Twice - Lt-2351
 public class FirstRepeatedCharLT2351 {
     static void main() {
-        String s = "abcdd";
+        String s = "babccdd";
         char ch = firstRepeatedChar(s);
 
         IO.println("First5 Repeated char : "+ch);
