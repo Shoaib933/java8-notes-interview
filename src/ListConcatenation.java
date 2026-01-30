@@ -8,5 +8,9 @@ public class ListConcatenation {
         List<String> words = Arrays.asList("Java", "is", "awesome");
         String str = words.stream().collect(Collectors.joining(" "));
         System.out.println(str);
+        /*
+        String str = String.join("-", words);
+    IO.println(str);
+         */
     }
 }
