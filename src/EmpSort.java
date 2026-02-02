@@ -26,6 +26,7 @@ public class EmpSort {
         IO.println("Second Higest Salary Employee");
         employees.stream()
                 .sorted(Comparator.comparingInt(e -> -e.salary))
+//                .sorted(Comparator.comparing(e -> -e.salary))
 //                .sorted(Comparator.comparingInt(Employee::getSalary)
                 .skip(1)
                 .findFirst()
