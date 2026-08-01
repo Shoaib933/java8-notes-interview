@@ -18,5 +18,41 @@ public class MaxValue {
 
          */
         System.out.println("Maxx :" +n);
+        /*
+
+        Step 2: .max(Integer::compare)
+
+The method signature is:
+
+Optional<T> max(Comparator<? super T> comparator)
+
+For Stream<Integer> it becomes:
+
+Optional<Integer> max(Comparator<Integer> comparator)
+
+The max() method needs to know how to compare two Integer objects.
+
+You provide:
+
+Integer::compare
+
+which is a method reference to
+
+Integer.compare(int x, int y)
+
+Internally it is equivalent to:
+
+(a, b) -> Integer.compare(a, b)
+
+or
+
+new Comparator<Integer>() {
+    @Override
+    public int compare(Integer a, Integer b) {
+        return Integer.compare(a, b);
+    }
+}
+
+         */
     }
 }
